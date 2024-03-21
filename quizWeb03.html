@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Quiz Application</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f7f7f7;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    #quiz-container {
+      background-color: #fff;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      max-width: 600px;
+      width: 100%;
+      overflow-y: auto; /* Added overflow property */
+      max-height: calc(100vh - 40px); /* Adjusted max-height to consider padding */
+    }
+    h2 {
+      color: #333;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    form {
+      max-width: 500px;
+      margin: 0 auto;
+    }
+    p {
+      margin-bottom: 10px;
+      font-weight: bold;
+      font-size: 16px;
+    }
+    input[type="radio"] {
+      margin-bottom: 10px;
+    }
+    input[type="submit"] {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      display: block;
+      margin: 20px auto;
+      font-size: 16px;
+    }
+    input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <div id="quiz-container">
+    <h2>Quiz</h2>
+    <form id="quiz-form">
+      <p>Q1. What is 2+3?</p>
+      <input type="radio" name="question1" id="q1_option1">5 <br>
+      <input type="radio" name="question1">8 <br>
+      <input type="radio" name="question1">9 <br>
+      <input type="radio" name="question1">10 <br>
+
+      <p>Q2. What is 8+3?</p>
+      <input type="radio" name="question2" id="q2_option1">2 <br>
+      <input type="radio" name="question2">8 <br>
+      <input type="radio" name="question2" id="correct2">11 <br>
+      <input type="radio" name="question2">9 <br>
+
+      <p>Q3. What is 28+3?</p>
+      <input type="radio" name="question3" id="q3_option1">15 <br>
+      <input type="radio" name="question3" id="correct3">31 <br>
+      <input type="radio" name="question3">10 <br>
+      <input type="radio" name="question3">19 <br>
+
+      <p>Q4. What is the capital of France?</p>
+      <input type="radio" name="question4">Berlin <br>
+      <input type="radio" name="question4" id="correct4">Paris <br>
+      <input type="radio" name="question4">Madrid <br>
+      <input type="radio" name="question4">Rome <br>
+
+      <p>Q5. Which planet is known as the Red Planet?</p>
+      <input type="radio" name="question5">Venus <br>
+      <input type="radio" name="question5">Saturn <br>
+      <input type="radio" name="question5" id="correct5">Mars <br>
+      <input type="radio" name="question5">Jupiter <br>
+
+      <input type="submit" name="submit" value="Submit Quiz" onClick="result()">
+    </form>
+  </div>
+
+  <script>
+    function result() {
+      var score = 0;
+      if (document.getElementById('correct1').checked) {
+        score++;
+      }
+      if (document.getElementById('correct2').checked) {
+        score++;
+      }
+      if (document.getElementById('correct3').checked) {
+        score++;
+      }
+      if (document.getElementById('correct4').checked) {
+        score++;
+      }
+      if (document.getElementById('correct5').checked) {
+        score++;
+      }
+      alert("Your score is: " + score);
+      // to print on browser
+      // document.write("Your score is:"+score);
+    }
+  </script>
+</body>
+</html>
